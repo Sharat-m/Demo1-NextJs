@@ -1,6 +1,19 @@
+import styles from "./home.modules.css"
+
 const Home = () => {
   // throw new Error("error in home");
-  return <div>Home Page!</div>;
+  return <div className={styles.container}>
+    <div  className="textContainer">
+<h1> Create thoughts Agency,</h1>
+<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+
+    </div>
+    <div  className="imgContainer"></div>
+    
+
+    
+    </div>;
 };
 
 export default Home;
