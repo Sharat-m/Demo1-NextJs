@@ -32,7 +32,7 @@ const Links = () => {
   const isAdmin = false;
 
   return (
-    <div className={styles.container} >
+    <div className={styles.container}>
       <div className={styles.links}>
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
@@ -49,16 +49,16 @@ const Links = () => {
           <NavLink item={{ title: "Login", path: "/login" }} />
         )}
       </div>
-      <button>menu</button>
-      {
-        open && (<div className={styles.mobileLinks}> 
-        {links.map ((link) => (
-          <NavLink item={link} key={link.title} />
-        ))}
+      <button className={styles.menuButton} onClick={() => setOpen((prev) => !prev)}>menu</button>
+      {open && (
+        <div className={styles.mobileLinks}>
+          {links.map((link) => (
+            <NavLink item={link} key={link.title} />
+          ))}
         </div>
-    )}
+      )}
     </div>
-);
+  );
 };
 
 export default Links;
