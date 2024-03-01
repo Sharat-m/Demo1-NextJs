@@ -17,18 +17,14 @@ const Links = () => {
       path: "/contact",
     },
     {
-      title: "Admin",
-      path: "/admin",
-    },
-    {
       title: "Blog",
       path: "/blog",
     },
-    {
-      title: "Login",
-      path: "/login",
-    },
   ];
+
+  //TEMPORARY
+  const session = true;
+  const isAdmin = false;
 
   return (
     <div className={styles.links}>
@@ -38,6 +34,14 @@ const Links = () => {
         //   {link.title}
         // </Link>
       ))}
+      {session ? (
+        <>
+          {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
+          <button className={styles.logout}>Logout</button>
+        </>
+      ) : (
+        <NavLink item={{ title: "Login", path: "/login" }} />
+      )}
     </div>
   );
 };
