@@ -29,9 +29,7 @@ const AboutPage = () => {
             <h1>10K+</h1>
             <p>Year of experience</p>
           </div>
-
         </div>
-          
       </div>
 
       <div className={styles.imgContainer}>
@@ -39,7 +37,7 @@ const AboutPage = () => {
           src="/about.png"
           alt="about image"
           fill
-          className={styles.aboutImg}
+          className={styles.img}
         />
       </div>
     </div>
