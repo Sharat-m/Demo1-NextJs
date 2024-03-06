@@ -52,7 +52,7 @@ const Links = () => {
       </div>
      
       {/* <button className={styles.menuButton} onClick={() => setOpen((prev) => !prev)}>menu</button> */}
-    <Image src="/menu.png" alt="" width={30} height={30} className={styles.menuButton} onClick={() => setOpen((prev) => !prev)} />
+    <Image src="/menu.png" className={styles.menuButton} alt="" width={30} height={30}  onClick={() => setOpen((prev) => !prev)} />
       {open && (
         <div className={styles.mobileLinks}>
           {links.map((link) => (
