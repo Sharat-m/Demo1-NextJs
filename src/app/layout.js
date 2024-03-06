@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar"
 
 import Footer from "@/components/footer/Footer";
+import ClientSideProvideTest from "@/components/clientSideProviderTest";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,12 +17,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* <ClientSideProvideTest > */}
+
         <div className="container" >
         <Navbar /> 
         {/* <h2>This is the layout page for all the page</h2> */}
         {children}
         <Footer />
         </div>
+        {/* </ClientSideProvideTest> */}
         </body>
         
     </html>
