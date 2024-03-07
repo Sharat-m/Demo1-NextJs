@@ -2,21 +2,26 @@ import Image from "next/image";
 import styles from "./siglePost.module.css";
 import PostUser from "@/components/postUser/postUser";
 import { Suspense } from "react";
+import { getPost } from "@/library/data";
 
-// Fetch the data from the API
-const getData = async (slug) => {
-  // const res = await fetch("https://jsonplaceholder.typicode.com/posts", {cache: "no-store"});
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+// FETCH DATA WITH AN API
+// const getData = async (slug) => {
+//   // const res = await fetch("https://jsonplaceholder.typicode.com/posts", {cache: "no-store"});
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
 
-  if (!res.ok) {
-    throw new Error("Something went wrong");
-  }
-  return res.json();
-};
+//   if (!res.ok) {
+//     throw new Error("Something went wrong");
+//   }
+//   return res.json();
+// };
 
 const SinglePostPage = async ({ params }) => {
   const { slug } = params;
-  const post = await getData(slug);
+  // FETCH DATA WITH AN API
+  // const post = await getData(slug);
+  // FETCH DATA WITHOUT AN API
+  const post = await getPost(slug);
+  console.log(post);
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -28,7 +33,7 @@ const SinglePostPage = async ({ params }) => {
         />
       </div>
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>{post.title}</h1>
+        <h1 className={styles.title}>{post?.title}</h1>
         <div className={styles.detail}>
           <Image
             className={styles.avatar}
@@ -43,9 +48,9 @@ const SinglePostPage = async ({ params }) => {
             <span className={styles.detailValue}>Sharat</span>
           </div> */}
           {/* Suspense is used from react it is used for showing the loading text */}
-          <Suspense fallback={<div>Loading.....</div>}>
+        {post &&  <Suspense fallback={<div>Loading.....</div>}>
             <PostUser userId={post.userId} />
-          </Suspense>
+          </Suspense>}
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>01.02.2023</span>
