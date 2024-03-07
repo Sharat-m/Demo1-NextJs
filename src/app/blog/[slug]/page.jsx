@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./siglePost.module.css";
+import PostUser from "@/components/postUser/postUser";
 
 // Fetch the data from the API
 const getData = async (slug) => {
@@ -35,11 +36,12 @@ const SinglePostPage = async ({ params }) => {
             width={50}
             height={50}
           />
-
-          <div className={styles.detailText}>
+          {/* This commented div author is created seperate component(postUser) to increase page speed  */}
+          {/* <div className={styles.detailText}>
             <span className={styles.detailTitle}>Author</span>
             <span className={styles.detailValue}>Sharat</span>
-          </div>
+          </div> */}
+          <PostUser  />
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>01.02.2023</span>
