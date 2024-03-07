@@ -1,8 +1,20 @@
 import Image from "next/image";
 import styles from "./siglePost.module.css";
 
-const SinglePostPage = ({params, s}) => {
-  console.log(params);
+// Fetch the data from the API
+const getData = async (slug) => {
+  // const res = await fetch("https://jsonplaceholder.typicode.com/posts", {cache: "no-store"});
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+
+  if (!res.ok) {
+    throw new Error("Something went wrong");
+  }
+  return res.json();
+};
+
+const SinglePostPage = async ({ params }) => {
+  const { slug } = params;
+  const post = await getData(slug);
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -14,7 +26,7 @@ const SinglePostPage = ({params, s}) => {
         />
       </div>
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>Title</h1>
+        <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detail}>
           <Image
             className={styles.avatar}
@@ -33,7 +45,7 @@ const SinglePostPage = ({params, s}) => {
             <span className={styles.detailValue}>01.02.2023</span>
           </div>
         </div>
-        <div className={styles.content}> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe illo maxime nulla odio fuga dolor laudantium amet obcaecati totam nam placeat, expedita, quidem laborum voluptatum animi aspernatur quo repellendus explicabo.</div>
+        <div className={styles.content}> {post.body}</div>
       </div>
     </div>
   );
