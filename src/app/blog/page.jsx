@@ -1,7 +1,7 @@
 import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
 
-// Fetch the data from the API
+// FETCH DATA WITH AN API
 const getData = async () => {
   // const res = await fetch("https://jsonplaceholder.typicode.com/posts", {cache: "no-store"});
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {next:{revalidate:3600}});
@@ -13,6 +13,7 @@ const getData = async () => {
 };
 
 const BlogPage = async () => {
+  // FETCH DATA WITH AN API
   const posts = await getData();
   // console.log(posts);
   return (

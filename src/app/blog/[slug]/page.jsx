@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./siglePost.module.css";
 import PostUser from "@/components/postUser/postUser";
+import { Suspense } from "react";
 
 // Fetch the data from the API
 const getData = async (slug) => {
@@ -41,7 +42,10 @@ const SinglePostPage = async ({ params }) => {
             <span className={styles.detailTitle}>Author</span>
             <span className={styles.detailValue}>Sharat</span>
           </div> */}
-          <PostUser  />
+          {/* Suspense is used from react it is used for showing the loading text */}
+          <Suspense fallback={<div>Loading.....</div>}>
+            <PostUser userId={post.userId} />
+          </Suspense>
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>01.02.2023</span>

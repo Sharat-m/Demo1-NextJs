@@ -1,10 +1,23 @@
 import styles from "./postUser.module.css"
 
-const PostUser = () => {
+//FETCH DATA WITH AN API
+const getData = async (userId) => {
+    // const res = await fetch("https://jsonplaceholder.typicode.com/posts", {cache: "no-store"});
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`,{cache: "no-store"});
+  
+    if (!res.ok) {
+      throw new Error("Something went wrong");
+    }
+    return res.json();
+  };
+
+const PostUser = async ({userId}) => {
+    //FETCH DATA WITH AN API
+    const user = await getData(userId);
     return(
              <div className={styles.container}>
             <span className={styles.title}>Author</span>
-            <span className={styles.userName}>Sharat</span>
+            <span className={styles.userName}>{user.username}</span>
           </div>
     )
 }
