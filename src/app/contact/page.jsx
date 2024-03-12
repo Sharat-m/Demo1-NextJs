@@ -7,6 +7,11 @@ import styles from "./contact.module.css";
 //   ssr: false,
 // });
 
+export const metadata = {
+  title: "Next App Contact", 
+  description: "Contact description",
+};
+
 const ContactPage = () => {
   // const a = Math.random();
   //       console.log(a);
