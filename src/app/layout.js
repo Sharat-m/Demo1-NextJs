@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar/Navbar"
 
 import Footer from "@/components/footer/Footer";
 import ClientSideProvideTest from "@/components/clientSideProviderTest";
+// import CompanyPage from "@/components/mobileAppBanner/page";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <Navbar /> 
         {/* <h2>This is the layout page for all the page</h2> */}
         {children}
+        {/* <CompanyPage /> */}
         <Footer />
         </div>
         {/* </ClientSideProvideTest> */}

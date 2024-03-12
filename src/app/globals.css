@@ -1,5 +1,5 @@
 :root {
-  --bg: blue;
+  --bg: rgb(15, 11, 36);
   --text: white;
 }
 
@@ -19,7 +19,7 @@ a {
 }
 
 .container {
-  background-color: blueviolet;
+  background-color:rgb(15, 11, 36);
   width: 1536px;
   margin: auto;
   padding-left: 50px;
