@@ -8,7 +8,7 @@ import styles from "./contact.module.css";
 // });
 
 export const metadata = {
-  title: "Next App Contact", 
+  title: "Contact", 
   description: "Contact description",
 };
 

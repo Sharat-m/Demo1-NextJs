@@ -9,8 +9,15 @@ import ClientSideProvideTest from "@/components/clientSideProviderTest";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// export const metadata = {
+//   title: "Next App Title", 
+//   description: "Next.js starter app description",
+// };
 export const metadata = {
-  title: "Next App Title", 
+  title: {
+default : "Next.js 14 Home",
+template:"%s | Next.js 14 "
+  },
   description: "Next.js starter app description",
 };
 
