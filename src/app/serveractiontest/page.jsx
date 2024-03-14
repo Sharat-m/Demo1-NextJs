@@ -6,11 +6,18 @@ const ServerActionTestPage = () =>{
     return (
         <div>
             <form action={addPost}>
-                <input type="text" placeholder="title" name="title" />
-                <input type="text" placeholder="desc" name="desc"/>
+                <input type="text" placeholder="Blog Title" name="title" />
+                <br /><br />
+                <input type="text" placeholder="Blog Description" name="desc"/>
+                <br /><br />
                 <input type="text" placeholder="slug" name="slug"/>
-                <input type="text" placeholder="userId" name="userId"/>
-                <button>Create</button>
+                <br /><br />
+                <input type="text" placeholder="Blog userId" name="userId"/>
+                <br /><br />
+                <input type="text" placeholder="Image Url" name="img" />
+                <br />
+                <br />
+                <button>Create Blog</button>
             </form>
         </div>
     )
